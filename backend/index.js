@@ -14,7 +14,13 @@ const app = express();
 // app.use(cors());
 
 // middleware
-app.use(cors());
+app.use(
+  cors({
+    origin: ["https://deploy-mern-1whq.vercel.app"],
+    methods: ["POST", "GET"],
+    credentials: true,
+  })
+);
 app.use(cookieParser());
 app.use(bodyParser.urlencoded({ extended: false }));
 // parse application/json
